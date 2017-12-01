@@ -56,3 +56,36 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+
+
+
+=============================================================================================
+
+How-To-Laravel Project established!
+We are going to learn and practice the awesome stuffs of Laravel belows:
+1. Authentication/Multi Auth (Middleware)
+2. Database Read/Write Splitting
+3. Api Authentication
+4. phpRedit
+5. Bootstrap
+
+Peace&Love
+20171201
+
+=============================================================================================
+
+Chapter1
+1. An error in migration
+Syntax error or access violation: 1071 Specified key was too long; max key length is 767 bytes......
+To solve this, you need to go to app/Providers/AppServiceProvider and modify the the boot() function
+(details in the codes, go and check it with the comments I left).
+
+The user auth route (default setting):
+vendor/laravel/framework/src/Illuminate/Support/Facades/Auth.php
+vendor/laravel/framework/src/Illuminate/Routing/Router.php
+
+Peace&Love
+20171201
+
+
+=============================================================================================
