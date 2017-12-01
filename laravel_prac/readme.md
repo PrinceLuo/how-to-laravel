@@ -74,7 +74,7 @@ Peace&Love
 
 =============================================================================================
 
-Chapter1
+Chapter2
 1. An error in migration
 Syntax error or access violation: 1071 Specified key was too long; max key length is 767 bytes......
 To solve this, you need to go to app/Providers/AppServiceProvider and modify the the boot() function
@@ -88,4 +88,25 @@ Peace&Love
 20171201
 
 
-=============================================================================================
+============================================================================================
+
+
+Before we start Chapter3:
+I made a shell script called lampp-laravel.sh to help load Laravel project into lammp automatically.
+And notice that when I try loading a image by saying {{ public_path() }}/../tools.png, it fails; however
+I succeed by changing it into {{ url('/') }}/../tools.png, permissions problem?
+
+Chapter3
+The login page path: views/auth/login.blade.php (same as register)
+
+The navigate bar is written in views/layouts.app.blade.php;
+
+To set the mail function, first you have set the .env file on the mail setting part. Then
+go to config/mail.php and set the mail part, just make sure the critical parts are the same 
+as the ones in .env file.
+
+Peace&Love
+20171201
+
+
+============================================================================================

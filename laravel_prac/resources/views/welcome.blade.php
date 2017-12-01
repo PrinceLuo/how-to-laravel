@@ -9,7 +9,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
+        <link rel="icon" type="image/png" href="{{ url('/') }}/image/tools.png" />
         <!-- Styles -->
         <style>
             html, body {

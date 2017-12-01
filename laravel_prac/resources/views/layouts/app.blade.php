@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{{ url('/') }}/image/tools.png" />
 </head>
 <body>
     <div id="app">
