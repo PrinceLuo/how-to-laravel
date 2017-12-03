@@ -59,7 +59,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 
 
-=============================================================================================
+==================================================
 
 How-To-Laravel Project established!
 We are going to learn and practice the awesome stuffs of Laravel belows:
@@ -72,7 +72,7 @@ We are going to learn and practice the awesome stuffs of Laravel belows:
 Peace&Love
 20171201
 
-=============================================================================================
+==================================================
 
 Chapter2
 1. An error in migration
@@ -88,7 +88,7 @@ Peace&Love
 20171201
 
 
-============================================================================================
+==================================================
 
 
 Before we start Chapter3:
@@ -109,4 +109,60 @@ Peace&Love
 20171201
 
 
-============================================================================================
+==================================================
+Chapter4
+(1)LoginController
+In app/Http/Controllers/Auth/LoginController.php, you can determine the page of
+successfully loggin, by modifying the variable $redirect, which is stored the
+location
+
+In app/Http/Kernel.php, the variable $routeMiddleware contains all the middlewares
+the app is going to handle
+
+AuthenticatesUsers which used in LoginController, is basic authentic controller
+
+examples: the showLoginForm() determine the login page, others like login(Request $request)
+validateLogin(Request $request)
+
+we can change the email to name to change the login method (change the validateLogin(Request $request) username() and the login blade email===>name)
+
+in login(Request $request), there is a function called hasTooManyLoginAttempts($request) you can implement this in 
+/vendor/laravel/framework/src/Illuminate/Foundation/Auth/ThrottlesLogins
+
+You can also change the elements of login required inputs. For example, you can change it 
+into emails<===>name combo. Change the two functions validateLogin(Request $request) and credentials(Request $request)
+in /vendor/laravel/framework/src/Illuminate\Foundation\Auth/AuthenticatesUsers.php
+and function validateCredentials(UserContract $user, array $credentials) in /vendor/laravel/framework/src/Illuminate\Foundation\Auth/EloquentUserProvider.php
+and related elements in login blade
+
+Peace&Love
+20171203
+
+
+==================================================
+
+chapter5:
+RegisterControll.php, similar to the LoginController.php
+
+if you want to add more elements in registration, you can change
+
+(1)the register blade
+
+(2)validator(array $data) and create(array $data) in RegisterController.php 
+
+(3)protected $fillable add the element in the User.php
+(4)do not forget the Database
+
+Peace&Love
+20171203
+
+
+==================================================
+
+
+Chapter6~8
+
+part1: 
+maily focus on setting up basic controller and blades and routes    
+details: the name setting in the routing is for someone using route('name) 
+somewhere (for example: the reset link button)
