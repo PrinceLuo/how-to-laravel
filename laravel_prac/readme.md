@@ -166,3 +166,15 @@ part1:
 maily focus on setting up basic controller and blades and routes    
 details: the name setting in the routing is for someone using route('name) 
 somewhere (for example: the reset link button)
+
+part2:
+make a function called showLoginForm() in LoginController in Admin (do not forget to change the return view)
+Notice: the function showLoginForm() is copied from \Illuminate\Foundation\Auth\AuthenticatesUsers
+if you need multi characters in your program, copy the function you need from here.
+
+make the auth as admin in AdminController in the constructor, as well as the middleware
+make a function called guard() in LoginController in Admin (set the guard as admin)
+do not forget to add a "use Auth" on top of admin/LoginController.php
+
+To make the multi users redirect works (already loggin successfully), we have to set different guard in handle() in Middle/RedirectIfAuthenticated (go and check the detail as I set 'admin' and 'user')
+and also some changes in unauthenticated() in Exceptions/Handler.php (differet from the tutorial we are using 5.5)
