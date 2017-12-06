@@ -178,5 +178,3 @@ do not forget to add a "use Auth" on top of admin/LoginController.php
 
 To make the multi users redirect works (already loggin successfully), we have to set different guard in handle() in Middle/RedirectIfAuthenticated (go and check the detail as I set 'admin' and 'user')
 and also some changes in unauthenticated() in Exceptions/Handler.php (differet from the tutorial we are using 5.5)
-
-Just a test, to see the revert function of git! Relax~~~
