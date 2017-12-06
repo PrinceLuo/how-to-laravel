@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Http\Controllers\AdminController;
+use App\Notifications\AdminResetPasswordNotification;
 
 class Admin extends Authenticatable
 {
@@ -11,6 +13,19 @@ class Admin extends Authenticatable
     use Notifiable;
     
     protected $_table = 'admins';
+    
+    // copied from \Illuminate\Auth\Passwords\CanResetPassword.php
+    /**
+     * Send the password reset notification.
+     *
+     * @param  string  $token
+     * @return void
+     */
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new AdminResetPasswordNotification($token));
+    }
+    
     /**
      * The attributes that are mass assignable.
      *

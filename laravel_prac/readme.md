@@ -178,3 +178,38 @@ do not forget to add a "use Auth" on top of admin/LoginController.php
 
 To make the multi users redirect works (already loggin successfully), we have to set different guard in handle() in Middle/RedirectIfAuthenticated (go and check the detail as I set 'admin' and 'user')
 and also some changes in unauthenticated() in Exceptions/Handler.php (differet from the tutorial we are using 5.5)
+
+part3:
+To set the ResetPassword functions for Admin:
+1. copy and OVER WRITE the function showLinkRequestForm() from Illuminate\Foundation\Auth\SendsPasswordResetEmails.php
+into \Controllers\Admin\ForgotPasswordController.php
+
+2. copy and OVER WRITE the function showResetForm(Request $request, $token = null) from
+Illuminate\Foundation\Auth\ResetsPasswords.php 
+into App\Http\Controllers\Admin\ResetPasswordController.php
+
+3. in order to make the link in the email jump to the correct place (which is the Admin reset password page)
+(1)create a new notification for Admin
+type on command line:
+php artisan make:notification AdminResetPasswordNotification
+after creating successfully, 
+copy and OVER WRITE the function toMail() from Illuminate\Auth\Notifications\ResetPassword.php
+into App\Notifications\AdminResetPasswordNotification.php
+and add the $token used in the toMail() into the __construct() at the same time
+
+copy and OVER WRITE the function sendPasswordResetNotification($token) from \Illuminate\Auth\Passwords\CanResetPassword.php
+into your Admin model
+to implement the new notification for Admin
+
+4. Now the resetpassword function is going to modify the data in 'users' table, in order to modify
+'admins' table:
+copy and OVER WRITE 2 functions broker() and guard() from Illuminate\Foundation\Auth\ResetsPasswords.php
+into App\Http\Controllers\Admin\ResetPasswordController.php
+
+DO PLEASE, check the code for details!!!
+
+Peace&Love
+20171206
+
+
+==================================================
