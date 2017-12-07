@@ -37,4 +37,17 @@ class LoginController extends Controller
         // logout link is not cover under the guest middleware
         $this->middleware('guest')->except('logout');
     }
+    
+    // copied from Illuminate\Foundation\Auth\AuthenticatesUsers.php
+    /**
+     * Get the needed authorization credentials from the request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return array
+     */
+    protected function credentials(Request $request)
+    {
+        //return $request->only($this->username(), 'password');
+        return ['email'=>$request->{$this->username()},'password'=>$request->password,'status'=>'1'];
+    }
 }

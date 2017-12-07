@@ -231,3 +231,18 @@ Peace&Love
 
 
 ==================================================
+
+
+Chapter10
+Add a new column "status" Boolean to verify whether this account is active or not.
+Copy and OVER WRITE the function credentials(Request $request) 
+from Illuminate\Foundation\Auth\AuthenticatesUsers.php
+into the very LoginController.php
+
+Next step will add functions about email link to activate the account.
+
+Peace&Love
+20171207
+
+
+==================================================
