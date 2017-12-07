@@ -213,3 +213,21 @@ Peace&Love
 
 
 ==================================================
+
+
+Chapter9
+
+(1)copy sendLoginResponse(Request $request) from Illuminate\Foundation\Auth\AuthenticatesUsers.php
+into LoginController.php, to help different roles of administrators redirect to the right place
+
+(2)Roles can visit limited pages, some middlewares have been created. Go to check the code for details.(do not forget to add the very middlewares in Kernel.php)
+
+(3)add a page "test" that is inside the EditorController (which you need to pass the middleware "auth:admin" first).
+In order to let another role "admin" to access, claim that the route "test" is excepted of the 
+middleware "editor".
+
+Peace&Love
+20171207
+
+
+==================================================

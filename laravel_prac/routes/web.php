@@ -21,6 +21,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::prefix('admin')->group(function () {
     Route::get('/home','AdminController@index');
+    Route::get('/editor','EditorController@index');
+    Route::get('/test','EditorController@test');
     Route::get('login','Admin\LoginController@showLoginForm')->name('admin.login');
     Route::post('login','Admin\LoginController@login');
     Route::post('logout','Admin\LoginController@logout');

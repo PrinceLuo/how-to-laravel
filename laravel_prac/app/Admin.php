@@ -6,14 +6,20 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Http\Controllers\AdminController;
 use App\Notifications\AdminResetPasswordNotification;
+use App\role;
 
 class Admin extends Authenticatable
 {
     //
     use Notifiable;
     
-    protected $_table = 'admins';
+    protected $table = 'admins';
     
+    public function role(){
+        return $this->belongsToMany(role::class, 'role_admins');
+    }
+
+
     // copied from \Illuminate\Auth\Passwords\CanResetPassword.php
     /**
      * Send the password reset notification.
