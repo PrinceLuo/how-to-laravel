@@ -68,7 +68,7 @@ use RegistersUsers;
 //                    'email' => $data['email'],
 //                    'password' => bcrypt($data['password']),
 //        ]);
-
+        
         $user = User::create([
                     'name' => $data['name'],
                     'email' => $data['email'],
@@ -102,7 +102,11 @@ use RegistersUsers;
         //$this->guard()->login($user);
 //        return $this->registered($request, $user)
 //                        ?: redirect($this->redirectPath());
-        return redirect(route('verifyEmailfirst')); // sending an Email to activate
+//        return redirect(route('verifyEmailfirst')); // sending an Email to activate
+        
+        // add session flash to bring a message to the login page
+        session()->flash('regi_message', 'Registered! But need to activate the account in your Email box!');
+        return redirect(route('login'));
     }
 
     public function verifyEmailfirst() {

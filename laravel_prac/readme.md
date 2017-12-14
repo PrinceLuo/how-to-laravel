@@ -279,3 +279,16 @@ Peace&Love
 
 
 ==================================================
+
+
+Chapter11
+Change the redirect route inside the register(Request $request) so that we do not
+need the email/verifyEmailfirst.blade
+Instead, a message to will be demonstrated in the login page to remind the user
+to activate his or her account.
+
+Peace&Love
+20171214
+
+
+==================================================
