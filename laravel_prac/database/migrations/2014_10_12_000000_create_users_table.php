@@ -17,11 +17,10 @@ class CreateUsersTable extends Migration {
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
+            $table->boolean('status');
+            $table->string('verifyToken');
             $table->rememberToken();
             $table->timestamps();
-        });
-        Schema::table('users', function (Blueprint $table) {
-            $table->boolean('status');
         });
     }
 
@@ -32,9 +31,6 @@ class CreateUsersTable extends Migration {
      */
     public function down() {
         Schema::dropIfExists('users');
-        Schema::table('users', function($table) {
-        $table->dropColumn('status');
-    });
     }
 
 }

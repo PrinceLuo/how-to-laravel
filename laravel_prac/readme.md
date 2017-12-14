@@ -246,3 +246,36 @@ Peace&Love
 
 
 ==================================================
+
+
+Chapter11
+To make a E-mail with link for activating an account, we firstly rebuild our database (I would prefer do it in database directly);
+Add the token into the function create(array $data)
+then copy and OVER WRITE the function register(Request $request) from Illuminate\Foundation\Auth\RegistersUsers.php
+into the RegisterController
+Also inside the function register(Request $request), we change the redirect to a 
+new route called "verifyEmailfirst" (make this route in the web.php), then create
+a function called verifyEmailfirst() to serve this route (this function is to show
+a page, noticing the user to go to his or her email to activate the account, you can
+modify this function at will).
+
+
+a few functions created for sending that email
+
+After we insert the user profile into the database, we will then go to run the 
+function sendEmailToActivate($thisUser) to send the verify Email (go and check
+the modification inside the function). Create the function sendEmailToActivate($thisUser)
+at the same time.
+
+go to command line and type "php artisan make:mail verifyEmail"
+Inside the app/Http/Mail, we will write our own Email sender:
+We make a H5 page, which contains a link to a callback function activating the 
+account, to be sent to the specific Email box. We then create a route to serve 
+this link, which will point to the Auth\RegisterController@sendEmailDone; so we will
+change the state in the function sendEmailDone($email, $verifyToken).
+
+Peace&Love
+20171214
+
+
+==================================================

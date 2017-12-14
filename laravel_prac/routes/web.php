@@ -19,6 +19,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+// Email to activate the account in users table
+Route::get('verifyEmailfirst','Auth\RegisterController@verifyEmailfirst')->name('verifyEmailfirst');
+Route::get('verify/{email}/{verifyToken}','Auth\RegisterController@sendEmailDone')->name('sendEmailDone');
+
 Route::prefix('admin')->group(function () {
     Route::get('/home','AdminController@index');
     Route::get('/editor','EditorController@index');
