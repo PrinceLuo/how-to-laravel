@@ -42,4 +42,6 @@ Route::prefix('admin')->group(function () {
 Route::prefix('custom')->group(function($route){
     $route->get('register','Custom\CustomAuthController@showRegisterForm')->name('custom.register');
     $route->post('register','Custom\CustomAuthController@register');
+    $route->get('login','Custom\CustomAuthController@showLoginForm')->name('custom.login');
+    $route->post('login','Custom\CustomAuthController@login');
 });

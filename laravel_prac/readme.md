@@ -312,3 +312,24 @@ Peace&Love
 
 
 ==================================================
+
+
+Chapter13
+Cheers! We reach the last step of the series!
+
+In this chapter we mainly finish the login system left in the previous tutorial
+video, and an error fixed for chapter7. We solved it though, but I prefer the way
+it does in the video by over-writing it:
+Copy and OVER-WRITE the function unauthenticated($request, AuthenticationException $exception)
+from   Illuminate\Foundation\Exceptions, to app/Exception/Handler.php, and the
+changes I have already made in the function (you can also check the previous code
+by checking the comments)
+
+Thank you very much! Keep working hard and I am looking forward to meeting you
+in the next episode! Best wishes!
+
+Peace&Love
+20171218
+
+
+==================================================
