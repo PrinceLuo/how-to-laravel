@@ -79,6 +79,9 @@
 
             <div class="content">
                 <div class="title m-b-md">
+                    @if(session()->has('status'))
+                    <p>{{ session()->get('status') }}</p>
+                    @endif
                     Laravel
                 </div>
 

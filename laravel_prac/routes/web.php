@@ -37,3 +37,9 @@ Route::prefix('admin')->group(function () {
     Route::get('register','Admin\RegisterController@showRegistrationForm');
     Route::post('register','Admin\RegisterController@register');
 });
+
+// self-made custom route
+Route::prefix('custom')->group(function($route){
+    $route->get('register','Custom\CustomAuthController@showRegisterForm')->name('custom.register');
+    $route->post('register','Custom\CustomAuthController@register');
+});

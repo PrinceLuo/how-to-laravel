@@ -292,3 +292,23 @@ Peace&Love
 
 
 ==================================================
+
+
+Chapter12
+Developing a self-made registration-login system (without using structures of Laravel).
+First, set up some front-end code (bootstrap style, not much about back-end, but worth watching);
+
+Then, set the self-made controller Custom/CustomAuthController with some validation;
+I also add some messages/errors feedback demonstrations at the same time.
+
+Next, build the register(Request $req) and other related functions (a little different from the video);
+
+Finally, add a success message in the welcome.blade page (I will remove that flash message later).
+
+Let's wait for the ending of this series!
+
+Peace&Love
+20171218
+
+
+==================================================
