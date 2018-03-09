@@ -110,6 +110,8 @@ Peace&Love
 
 
 ==================================================
+
+
 Chapter4
 (1)LoginController
 In app/Http/Controllers/Auth/LoginController.php, you can determine the page of
@@ -234,6 +236,7 @@ Peace&Love
 
 
 Chapter10
+
 Add a new column "status" Boolean to verify whether this account is active or not.
 Copy and OVER WRITE the function credentials(Request $request) 
 from Illuminate\Foundation\Auth\AuthenticatesUsers.php
@@ -249,6 +252,7 @@ Peace&Love
 
 
 Chapter11
+
 To make a E-mail with link for activating an account, we firstly rebuild our database (I would prefer do it in database directly);
 Add the token into the function create(array $data)
 then copy and OVER WRITE the function register(Request $request) from Illuminate\Foundation\Auth\RegistersUsers.php
@@ -282,6 +286,7 @@ Peace&Love
 
 
 Chapter11
+
 Change the redirect route inside the register(Request $request) so that we do not
 need the email/verifyEmailfirst.blade
 Instead, a message to will be demonstrated in the login page to remind the user
@@ -295,6 +300,7 @@ Peace&Love
 
 
 Chapter12
+
 Developing a self-made registration-login system (without using structures of Laravel).
 First, set up some front-end code (bootstrap style, not much about back-end, but worth watching);
 
